@@ -1,0 +1,7 @@
+Django==1.11
+flake8==2.1.0
+logging==0.4.9.6
+mccabe==0.2.1
+pep8==1.5.7
+pyflakes==0.8.1
+wsgiref==0.1.2
