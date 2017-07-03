@@ -1,25 +1,6 @@
 # Django Url Shortener Example
 
-## Assignment 1: Fyndiq code reading assignment
-1. taskrunner.py is a comman line tool to create filesystem based locks. These 
-  locks can be used to syncronize Processes accesing shared resources or 
-  critical sections. Can be used to avoid race conditions by providing atomic
-  locking mechanism.
-2. When threshold and counter_file options are provided. taskrunner increments
-  on every attempt and writes it to the file. Error is not reported until
-  threshold is reached. This can be useful to solve process based readers/
-  writers problem. Eg. If you have multiple cron jobs on your servers that
-  needs to wait for one another etc..
-
-## Assignment 2: Fyndiq programming assignment
-I have adjusted my model several times for the given problem. First I was thinking
-about using two different models for keywords and actual keyword url mappings 
-together with a fast algorithm to make string matching. Then I realized making a
-token based query would be good enough for the requirements of such aplication.
-Adjusted my model to consist of a single table where the primary keys are the unique
-words from words.txt (Cleaneup up during bulk import).
-Using django model queries and filters it should be quite straightforward for code
-reviewers. Please have a look at models.ShortUrl class.
+Simple url shortener on django 1.11
  
 ### Installation
 After installing requirements and creating database tables, Please run importkw.py to 
@@ -31,7 +12,7 @@ Step by step:
 
 ```
 pip install -r requirements.txt
-./manage.py syncdb
+./manage.py migrate
 ./importkw.py -f words.txt -d db.sqlite3
 ./manage.py runserver
 ```
