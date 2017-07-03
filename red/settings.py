@@ -22,8 +22,21 @@ SECRET_KEY = '3vh)1i6ml75)*)!k@s8ie$gj7#8_f42mc3lxpy60k$coyzy!2k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors':[
+                'django.contrib.auth.context_processors.auth'
+                ]
+        },
+    },
+]
+
+# TEMPLATE_DEBUG = True
+# TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 ALLOWED_HOSTS = []
 
